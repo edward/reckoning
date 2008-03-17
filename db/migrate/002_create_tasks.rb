@@ -8,6 +8,7 @@ class CreateTasks < ActiveRecord::Migration
       t.column :rate, :decimal, :precision => 8, :scale => 2
       t.text :notes
       t.text :after_notes
+      t.integer :time_estimate #in seconds
       
       t.timestamps
     end

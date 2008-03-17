@@ -17,40 +17,16 @@
   
   <body>
     <div class="container">
-      <p class="span-24">Here's my site!</p>
-      <div class="span-4">
-        Left sidebar
+      <p class="span-24" style="color: green"><%= flash[:notice] %></p>
+      <div class="span-24">
+        <ul id='navlist'>
+          <li><%= link_to("Import daily hours", "") %></li>
+          <li><%= link_to("Jobs", "") %></li>
+          <li><%= link_to("Invoices", "") %></li>
+          <li><%= link_to("Clients", "") %></li>
+        </ul>
       </div>
-      <div class="span-16">
-        <div class="span-8">
-          Box1
-        </div>
-        <div class="span-4">
-          Box2
-        </div>
-        <div class="span-4 last">
-          Box3
-        </div>
-        <div class="span-16 last">
-          Main content
-        </div>
-      </div>
-      <div class="span-4 last">
-        Right sidebar
-      </div>
+      <%= yield :layout %>
     </div>
-    
-    <div>
-      <ul id='navlist'>
-        <li><%= link_to("Import daily hours", "") %></li>
-        <li><%= link_to("Jobs", "") %></li>
-        <li><%= link_to("Invoices", "") %></li>
-        <li><%= link_to("Clients", "") %></li>
-      </ul>
-    </div>
-    
-    <p style="color: green"><%= flash[:notice] %></p>
-    
-    <%= yield :layout %>
   </body>
 </html>
