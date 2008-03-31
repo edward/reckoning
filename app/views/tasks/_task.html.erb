@@ -1,0 +1,7 @@
+<div class='task last'>
+  <span class='name'><%= task.name %></span>
+  <span><strong><%= seconds_in_hours_and_minutes(task.total_time_for(day)) %></strong>&nbsp;|&nbsp;<%= seconds_in_hours_and_minutes(task.total_time) %></span>
+  
+  <%= render :partial => 'time_entries/time_entry', :collection => task.time_entries %>
+</div>
+<hr class='space' />

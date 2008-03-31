@@ -5,7 +5,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :projects
   
-  map.resources :tasks, :has_many => [ :time_entries ]
+  map.resources :tasks, :has_many => [ :time_entries ], :collection => { :import => :get, :process_import => :post }
 
   # The priority is based upon order of creation: first created -> highest priority.
 

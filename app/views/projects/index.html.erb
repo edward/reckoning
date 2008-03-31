@@ -1,21 +1,9 @@
-<p class="span-24">Here's my site!</p>
-<div class="span-4">
-  Left sidebar
+<!-- Full span is 24 columns -->
+<div class="span-24">
+  <%= render :partial => 'day', :collection => @days[0...-1], :locals => {:last => false} %>
+  <%= render :partial => 'day', :object => @days[-1], :locals => {:last => true} %>
 </div>
-<div class="span-16">
-  <div class="span-8">
-    Box1
-  </div>
-  <div class="span-4">
-    Box2
-  </div>
-  <div class="span-4 last">
-    Box3
-  </div>
-  <div class="span-16 last">
-    Main content
-  </div>
-</div>
+
 <div class="span-4 last">
   Right sidebar
 </div>

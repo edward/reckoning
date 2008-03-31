@@ -9,11 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 4) do
+ActiveRecord::Schema.define(:version => 6) do
 
   create_table "clients", :force => true do |t|
     t.string   "name"
     t.decimal  "default_rate", :precision => 8, :scale => 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "invoices", :force => true do |t|
+    t.integer  "client_id"
+    t.text     "notes"
+    t.datetime "sent_at"
+    t.datetime "paid_at"
+    t.boolean  "invalidated"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,9 +39,16 @@ ActiveRecord::Schema.define(:version => 4) do
     t.integer  "invoice_id"
     t.integer  "project_id"
     t.string   "name"
-    t.decimal  "rate",        :precision => 8, :scale => 2
+    t.decimal  "rate",          :precision => 8, :scale => 2
     t.text     "notes"
-    t.text     "after_notes"
+    t.integer  "time_estimate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "taxes", :force => true do |t|
+    t.integer  "task_id"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,6 +57,8 @@ ActiveRecord::Schema.define(:version => 4) do
     t.integer  "task_id"
     t.datetime "start_time"
     t.datetime "end_time"
+    t.text     "notes"
+    t.text     "after_notes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

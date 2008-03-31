@@ -1,0 +1,68 @@
+#!/usr/bin/env ruby -wKU
+
+require File.dirname(__FILE__) + '/../lib/time_cruncher'
+
+input = ""
+
+if ARGV[0]
+  if File.file?(ARGV[0])
+    input = File.read(ARGV[0])
+  else
+    input = ARGV[0]
+  end
+else
+  raise "crunch_time requires input... rawwwwwrrrr... want moar..."
+end
+
+tc = TimeCruncher.parse(input)
+tc.days.each do |d|
+  # puts d
+  
+  puts d.date
+  
+  minutes = d.tasks.inject(0) {|total, t| total + t.total_time } / 60
+  day_total_time = sprintf("\nTotal time for #{d.date}: %d:%02d\n", minutes / 60, minutes % 60)
+  
+  tasks = d.tasks
+  task_groups = []
+  until tasks.empty?
+    pn = tasks.first.project_name
+    task_groups << tasks.partition {|t| t.project_name == pn }.first
+    tasks.reject! {|t| t.project_name == pn}
+  end
+  
+  task_groups.each do |group|
+    
+    minutes = group.inject(0) {|total, t| total + t.total_time } / 60
+    task_total_time = sprintf("\n\n  Total time for project #{group.first.project_name}: %d:%02d\n", minutes / 60, minutes % 60)
+    
+    ## Re-sort the groups, based on the project name
+    # group.sort! {|a, b| a.project_name <=> b.project_name }
+    
+    # Re-partition the group, based on the project name
+    # TODO (this part could be done more efficiently)
+    sub_groups = []
+    until group.empty?
+      notes = group.first.notes[0..10]
+      sub_groups << group.partition {|t| t.notes[0..10] == notes }.first
+      group.reject! {|t| t.notes[0..10] == notes }
+    end
+    
+    s = ""
+    
+    sub_groups.each do |sub_group|
+      # Collect the task description strings, line broken
+      # s += sub_group.inject("." * 78) {|total, t| total + "\n" + t.to_s }
+      s += sub_group.inject("") {|total, t| total + "\n" + t.to_s }
+
+      minutes = sub_group.inject(0) {|total, t| total + t.total_time } / 60
+      s += sprintf("\n\n    Sub-total time for #{sub_group.first.notes[0..4] + "..."}: %d:%02d\n", minutes / 60, minutes % 60)
+    end
+    
+    puts s + task_total_time
+    puts
+  end
+  
+  puts day_total_time
+  puts "=" * 78
+end

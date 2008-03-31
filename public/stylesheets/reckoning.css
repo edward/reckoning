@@ -3,3 +3,19 @@
   list-style-type: none;
   padding-right: 20px;
 }
+
+.project .name {
+  color: red;
+}
+
+.task .name {
+  color: black;
+}
+
+.day .project .task {
+  padding-left: 1em;
+}
+
+.time-entry {
+  padding-left: 1em;
+}

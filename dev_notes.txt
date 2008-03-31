@@ -1,0 +1,86 @@
+= Notes during development and planning of Reckoning
+
+== What is this supposed to be?
+
+Soon after I started consulting, I realized I had to have a systematic and  clean way of billing clients. At around the same time, I also realized that it'd sure help my discipline in working at home if I knew where my time was going, so I needed a time tracking application to answer questions like “how long have I been working on *this* task”, or how many hours did I put in today/this week/this month so as to make financial projections (you know, to budget living expenses and that sort of thing).
+
+So what I needed was something that
+
+  * Kept track of time (per client, per project, per task)
+  * Kept track of invoices (which tasks at which rate, when issued, when paid, which taxes)
+  * Has an easily-hackable template for invoices (html and css would be fine, but TeX typesetting would be nice, though I really don't want to write TeX)
+  * Kept track of taxes (so as to issue GST back to the government in my case)
+
+I started to use Billable (not a bad app, and certainly designed for tracking invoices or invoiced taxes), but it really isn’t designed to do the time-tracking or taxes thing, and its invoice templating was pretty bare; setting up “total time” fields isn't intuitive.
+
+Aside from that, Billable keeps track of invoices really nicely, and supports "undo" quite well; correcting or deleting an invoice you just compiled is straightforward and intuitive, and viewing the invoice in the app will display a warning if it's out of date and needs to be regenerated.
+
+However, this might be a design flaw – an invoice already mailed out should be frozen, as well as its associated tasks; changing tasks that have already been accounted for would be corrupting the system, putting you and the client out of sync in terms of accounts.
+
+To fix the problem of possible desynchronization between your accounts and those of your clients in the event that you need to correct a sent-out invoice and re-issue it, you should just mark the incorrect invoice (which can really be thought of as a "written in stone" or "baked" collection of tasks) as invalid, unfreezing the tasks, and allowing them to be changed.
+
+When originally hacking out my initial solution which I calculated by hand for a while (making invoicing tedious, time intensive and painful), I was just using a text file with a standardized time entry format I made up.
+
+It was actually pretty cool, given that I could easily look at the text, and see what happened during my day. Being in text format also meant straightforward manipulation; with just two macros, my time entry mechanism was a snap, and given that I spent the bulk of my day in a text editor, I felt right at home. It felt right.
+
+I eventually wrote a parser for it to ease the pain of invoice generation, and was using both Billable and my homebrew system; I didn't want to lose money if my thing broke or ate data that hadn't been backed up.
+
+So now I finally want to finish this thing and write a system that meets my needs.
+
+At first, I wanted to continue the spirit of everything but the generated pdf invoices being in a text file; ascii-alchemy is awesome because of its simplicity.
+
+But it'd mean that every time I entered data, I'd have to validate my entry (not a big deal considering I'm a programmer and do this as part of my regular job). But things get hairy when keeping track of invoices; if I cancel/invalidate a invoice, the parser has to find those now unfrozen entries and edit them to still be associated with the invalid invoice, but also make copies, etc.
+
+It ended up being too much metadata to keep track of cleanly in the plain text, and it gets messy when you've got some information in the textfile and some elsewhere. Long live the textfile. Sadly, this has gotten too complex.
+
+So this thing is going to be a web app that runs locally. I'll build the first version with Rails, and move on to Merb when it stabilizes. Why a web app? To make it easily remote-able, collaborative, and cross platform. Also, making the templates and data representation shouldn't be too much of a pain.
+
+Ready? We're switching away from pure-text entry. Maybe we'll go back, but not today.
+
+OK: design decision: thinking about what should happen if we have valid and invalid invoices and associated tasks is making my head hurt; to really do the 'synchronized' undo, you'd have to save copies of the tasks associated with the invalid invoice, and create a copy of the invoice marked unsent, and make copies of the tasks that point at the new unsent invoice.
+
+Invalidating an Invoice is ok, but it means a deep copy of the Invoice's Tasks and whatever the Tasks's associated objects each has (possibly a Tax)
+
+(--> It'd be good to have the UI mention something about what has to happen when you need to make a change to an invoice that's been sent out.)
+
+^^^ typographic note: the "(--> something something)" should create a sidenote
+
+Mon 17 Mar 2008 00:06:30 EDT
+  Consider bringing in concepts from OmniFocus
+    Action
+    Project (a better name for Job)
+    Context (in this case, a Client)
+
+== Data structure
+
+Invoice
+  :sent_at (freeze attached tasks, because they've been sent out)
+  :valid?
+
+When invalidated (the invoice was sent out, but contained errors in it), tasks should be unfrozen, but still associated? But unless I also saved copies of the associated tasks, why would we care which tasks were associated, given they've changed?
+
+TimeEntry
+  :start_time
+  :end_time
+  :task_id
+
+Task
+  :invoice_id
+  :job_id
+  :name
+  :rate
+
+Project
+  :client_id # restricts so that a project can have only one client, so complex rates and payment doesn't come into play
+  :name
+
+Tax
+  :task_id
+  :rate
+
+Client
+  :name
+  :default_rate
+
+Invoice
+  :notes

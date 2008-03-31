@@ -17,13 +17,13 @@
   
   <body>
     <div class="container">
-      <p class="span-24" style="color: green"><%= flash[:notice] %></p>
+      <p class="span-24 loud large highlight"><%= flash[:notice] %></p>
       <div class="span-24">
         <ul id='navlist'>
-          <li><%= link_to("Import daily hours", "") %></li>
-          <li><%= link_to("Jobs", "") %></li>
-          <li><%= link_to("Invoices", "") %></li>
-          <li><%= link_to("Clients", "") %></li>
+          <li><%= link_to("Import daily hours", import_tasks_url) %></li>
+          <li><%= link_to("Projects", projects_url) %></li>
+          <li><%= link_to("Invoices", invoices_url) %></li>
+          <li><%= link_to("Clients", clients_url) %></li>
         </ul>
       </div>
       <%= yield :layout %>

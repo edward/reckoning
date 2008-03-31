@@ -5,6 +5,8 @@ class CreateTimeEntries < ActiveRecord::Migration
       
       t.timestamp :start_time
       t.timestamp :end_time
+      t.text :notes
+      t.text :after_notes
       
       t.timestamps
     end

@@ -1,0 +1,17 @@
+<h1>Import simple work day dump</h1>
+<h2>Paste your hours here:</h2>
+
+<div style='color: red'>
+  <%#= error_messages_for_import %>
+  
+  <% if @import_errors %>
+    <% @import_errors.each do |error| %>
+      <p><%= error %></p>
+    <% end %>
+  <% end %>
+</div>
+
+<% form_tag(process_import_tasks_url) do %>
+  <%= text_area_tag 'work_day_dump', '', :rows => 40, :cols => 80 %>
+  <%= submit_tag "Import" %>
+<% end %>

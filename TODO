@@ -6,7 +6,7 @@
 
   (--> Option to turn off accumulated hours? For now, just leave enabled)
 
-  Use red and black for now; think Tufte's books
+  Use red and black for now; think Bringhurst's books
 
 #2 projects/index body -> task entry input in a nice big font (tab index 0, so it defaults to this); allow for autocompletion of project name, and task ticket number
 
@@ -39,10 +39,12 @@ Should go in an enlarged version of the last week report's single day, so it's l
     
       (List uninvoiced Tasks, group by Job, and display Job name)
       Choose tasks
-  
 
 ---
 Future Tickets:
   projects/index -> task dashboard: visually distinguish invoiced, invoiced and paid, and uninvoiced tasks
   
   tasks/index -> list uninvoiced tasks, or have some intelligent way of presenting tasks chronologically,
+  
+  integration with quicksilver -> [quicksilver hotkey], [project name], tab [task name] (by default stop the current task and start this one)
+    This seems doable through a little client doing http requests
