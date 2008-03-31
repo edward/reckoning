@@ -3,3 +3,6 @@ tmp/**/*
 .DS_Store
 doc/api
 doc/app
+*.sqlite3
+vendor/rails
+vendor/plugins/rspec*
