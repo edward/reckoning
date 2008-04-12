@@ -48,3 +48,7 @@ Future Tickets:
   
   integration with quicksilver -> [quicksilver hotkey], [project name], tab [task name] (by default stop the current task and start this one)
     This seems doable through a little client doing http requests
+  
+  Try out using has_finder: http://jamesgolick.com/2008/2/25/plugins-i-ve-known-and-loved-2-has_finder
+  
+  Try out ditz
