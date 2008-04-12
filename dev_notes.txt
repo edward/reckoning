@@ -2,7 +2,7 @@
 
 == What is this supposed to be?
 
-Soon after I started consulting, I realized I had to have a systematic and  clean way of billing clients. At around the same time, I also realized that it'd sure help my discipline in working at home if I knew where my time was going, so I needed a time tracking application to answer questions like “how long have I been working on *this* task”, or how many hours did I put in today/this week/this month so as to make financial projections (you know, to budget living expenses and that sort of thing).
+Soon after I started consulting, I realized I had to have a systematic and clean way of billing clients. At around the same time, I also realized that it'd sure help my discipline in working at home if I knew where my time was going, so I needed a time tracking application to answer questions like “how long have I been working on *this* task”, or how many hours did I put in today/this week/this month so as to make financial projections (you know, to budget living expenses and that sort of thing).
 
 So what I needed was something that
 
@@ -39,7 +39,7 @@ Ready? We're switching away from pure-text entry. Maybe we'll go back, but not t
 
 OK: design decision: thinking about what should happen if we have valid and invalid invoices and associated tasks is making my head hurt; to really do the 'synchronized' undo, you'd have to save copies of the tasks associated with the invalid invoice, and create a copy of the invoice marked unsent, and make copies of the tasks that point at the new unsent invoice.
 
-Invalidating an Invoice is ok, but it means a deep copy of the Invoice's Tasks and whatever the Tasks's associated objects each has (possibly a Tax)
+Invalidating an Invoice is ok, but it means a deep copy of the Invoice's Tasks and whatever the Tasks' associated objects each has (possibly a Tax)
 
 (--> It'd be good to have the UI mention something about what has to happen when you need to make a change to an invoice that's been sent out.)
 

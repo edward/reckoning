@@ -1,5 +1,5 @@
 <!-- Full span is 24 columns -->
-<div class="span-24">
+<div class="span-24" style='overflow: auto; width: <%= (@days.size + 1) * 150 %>px;'>
   <%= render :partial => 'day', :collection => @days[0...-1], :locals => {:last => false} %>
   <%= render :partial => 'day', :object => @days[-1], :locals => {:last => true} %>
 </div>
