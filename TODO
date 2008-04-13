@@ -8,22 +8,24 @@
 
   Use red and black for now; think Bringhurst's books (e.g. “The Elements of Typographic Style”)
 
-#2 projects/index body -> task entry input in a nice big font (tab index 0, so it defaults to this); allow for autocompletion of project name, and task ticket number
+#2 projects/index body -> task entry input in a nice big font (tab index 0, so it defaults to this):
+
+Allow for autocompletion of project name, and task ticket number
 
 Should go in an enlarged version of the last week report's single day, so it's like entering a task in a Day-view in a day/week/month planner (maybe have an indicator saying "Enter new task") - should stop last entry with time = now, and start the new one, and warn this automatic entry. Should also list today's already finished tasks
 
-#3 projects/index footer -> list project names, each linked to a project page
+#3 projects/index footer -> list project names, each linked to a project page:
 
-#4 clients/index -> list clients, and allow for additions and edits to details
+#4 clients/index -> list clients, and allow for additions and edits to details:
 
-#5 invoices/index -> list invoices
+#5 invoices/index -> list invoices:
 
   Group by unpaid, order by date, project, client
     Invoice issued date, number, billed amount, due date (red if past due)
   Group by paid, order by date, project, client
     Invoice paid date, issued date, number, billed amount
 
-#6 invoice/new -> Design invoice creation
+#6 invoice/new -> Design invoice creation:
 
   Begins with just a template, showing the date, invoice number, invoice due date, logo, developer/owner name and details in the footer
   
@@ -40,15 +42,17 @@ Should go in an enlarged version of the last week report's single day, so it's l
       (List uninvoiced Tasks, group by Job, and display Job name)
       Choose tasks
 
----
+=============================================================================
 Future Tickets:
-  projects/index -> task dashboard: visually distinguish invoiced, invoiced and paid, and uninvoiced tasks
+  - projects/index -> task dashboard: visually distinguish invoiced, invoiced and paid, and uninvoiced tasks
   
-  tasks/index -> list uninvoiced tasks, or have some intelligent way of presenting tasks chronologically,
+  - tasks/index -> list uninvoiced tasks, or have some intelligent way of presenting tasks chronologically,
   
-  integration with quicksilver -> [quicksilver hotkey], [project name], tab [task name] (by default stop the current task and start this one)
-    This seems doable through a little client doing http requests
+  - integration with quicksilver -> [quicksilver hotkey], [project name], tab [task name] (by default stop the current task and start this one)
+    - This seems doable through a little client doing http requests
   
-  Try out using has_finder: http://jamesgolick.com/2008/2/25/plugins-i-ve-known-and-loved-2-has_finder
+  - Try out using has_finder: http://jamesgolick.com/2008/2/25/plugins-i-ve-known-and-loved-2-has_finder
   
-  Try out ditz
+  ✓ Try out ditz
+  
+  - Switch to using finder_for plugin
