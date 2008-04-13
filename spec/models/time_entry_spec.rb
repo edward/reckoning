@@ -15,6 +15,14 @@ describe TimeEntry do
     @te.should_not be_valid
   end
   
+  it "should have notes" do
+    @te.should respond_to(:notes)
+  end
+  
+  it "should have after_notes" do
+    @te.should respond_to(:after_notes)
+  end
+  
   it "should have a start time" do
     @te.should respond_to(:start_time)
   end

@@ -25,14 +25,6 @@ describe Task do
     @task.should respond_to(:rate)
   end
   
-  it "should have notes" do
-    @task.should respond_to(:notes)
-  end
-  
-  it "should have after_notes" do
-    @task.should respond_to(:after_notes)
-  end
-  
   it "should have a time estimate" do
     @task.should respond_to(:time_estimate)
   end

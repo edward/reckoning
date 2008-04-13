@@ -44,7 +44,8 @@ describe Project do
     it "should sum total time for a given date" do
       date = Date.today
       tasks_proxy = mock("tasks proxy")
-      @project.should_receive(:tasks_for).with(date).and_return(tasks_proxy)
+      @project.should_receive(:tasks).and_return(tasks_proxy)
+      tasks_proxy.should_receive(:for).with(date).and_return(tasks_proxy)
       tasks_proxy.should_receive(:sum)
       @project.total_time_for(date)
     end
