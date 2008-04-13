@@ -1,0 +1,24 @@
+= Reckoning
+
+Timetracking (and soon invoicing) for independent devs
+
+== Requirements
+
+* Rails 2.0.2 (see config/environment.rb; RAILS_GEM_VERSION)
+* A Rails-friendly database like sqlite3 and its accompanying rubygem
+
+=== Optional
+* RSpec and RSpec On Rails for running specs
+
+== Installation
+
+* Edit config/database.yml (currently set to use sqlite3)
+* $ rake db:migrate
+
+== Usage
+
+* Start the server with 
+
+  $ ruby script/server
+
+* Visit http://localhost:3000
