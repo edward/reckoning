@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>Start: ${1:`ruby -r time -e 'puts Time.now.strftime("%I:%M%p")'`}		${2:AnAwesomeProject}: ${3:Wrote some code; had deep thoughts}
+End:   $4</string>
+	<key>name</key>
+	<string>Time Entry</string>
+	<key>tabTrigger</key>
+	<string>te</string>
+	<key>uuid</key>
+	<string>1A60E054-A0CB-44B0-BAF6-25A58F0DE812</string>
+</dict>
+</plist>

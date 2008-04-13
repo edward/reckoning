@@ -17,6 +17,11 @@ Timetracking (and soon invoicing) for independent devs
 
 == Usage
 
+* Begin using a text file to keep your hours in that follows the standard seen
+  in vendor/plugins/time_cruncher/README.txt
+
+  ** Install the TextMate bundle if you've got it; how about them macros?
+
 * Start the server with 
 
   $ ruby script/server

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Reckoning</string>
+	<key>ordering</key>
+	<array>
+		<string>56EB0C8A-6F65-4EDD-B576-2AC6552E4EFC</string>
+		<string>1A60E054-A0CB-44B0-BAF6-25A58F0DE812</string>
+		<string>2396BBB2-8B90-4AA4-B09A-5D441A3569E0</string>
+	</array>
+	<key>uuid</key>
+	<string>1B9DBBEA-1086-4CCC-BC2C-55E13415B758</string>
+</dict>
+</plist>
