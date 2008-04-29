@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/wuntoo/!svn/ver/1156/trunk/vendor/plugins/has_finder/lib/has_finder
+END
+has_finder.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/wuntoo/!svn/ver/1156/trunk/vendor/plugins/has_finder/lib/has_finder/has_finder.rb
+END
+metaid.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/wuntoo/!svn/ver/1156/trunk/vendor/plugins/has_finder/lib/has_finder/metaid.rb
+END
+version.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/wuntoo/!svn/ver/1156/trunk/vendor/plugins/has_finder/lib/has_finder/version.rb
+END

@@ -1,0 +1,97 @@
+8
+
+dir
+1366
+https://svn.wuntoo.com/wuntoo/trunk/vendor/plugins/has_finder
+https://svn.wuntoo.com/wuntoo
+
+
+
+2008-04-10T00:06:17.680894Z
+1156
+keithm
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d15a6d01-fe69-db11-a6f0-00304874f5ea
+
+test
+dir
+
+History.txt
+file
+
+
+
+
+2008-04-10T03:02:13.000000Z
+7cf3bfaac8d53451ef43872acbfacdbf
+2008-04-10T00:06:17.680894Z
+1156
+keithm
+
+License.txt
+file
+
+
+
+
+2008-04-10T03:02:13.000000Z
+7f6d854c4e00ae9d2e55c14b9b81b45c
+2008-04-10T00:06:17.680894Z
+1156
+keithm
+
+Rakefile
+file
+
+
+
+
+2008-04-10T03:02:13.000000Z
+120b066d386a523afe7f5613c386710e
+2008-04-10T00:06:17.680894Z
+1156
+keithm
+
+setup.rb
+file
+
+
+
+
+2008-04-10T03:02:13.000000Z
+f3e96d4b9eeb3d0c4d841c7c7ea6259c
+2008-04-10T00:06:17.680894Z
+1156
+keithm
+
+config
+dir
+
+lib
+dir
+
+README.txt
+file
+
+
+
+
+2008-04-10T03:02:13.000000Z
+e57cac5c21c4fe498be620c738a1000e
+2008-04-10T00:06:17.680894Z
+1156
+keithm
+

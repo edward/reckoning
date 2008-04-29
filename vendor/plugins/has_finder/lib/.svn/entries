@@ -1,0 +1,43 @@
+8
+
+dir
+1366
+https://svn.wuntoo.com/wuntoo/trunk/vendor/plugins/has_finder/lib
+https://svn.wuntoo.com/wuntoo
+
+
+
+2008-04-10T00:06:17.680894Z
+1156
+keithm
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d15a6d01-fe69-db11-a6f0-00304874f5ea
+
+has_finder
+dir
+
+has_finder.rb
+file
+
+
+
+
+2008-04-10T03:02:13.000000Z
+d41baddf2f28fd40e8b514eba0a70b30
+2008-04-10T00:06:17.680894Z
+1156
+keithm
+
