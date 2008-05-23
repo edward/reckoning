@@ -29,7 +29,7 @@ Should go in an enlarged version of the last week report's single day, so it's l
 
   Begins with just a template, showing the date, invoice number, invoice due date, logo, developer/owner name and details in the footer
   
-  --> Each field is editable and should save
+  => Each field is editable and should save
 
   (Preview version is done in-situ)
 
@@ -39,11 +39,17 @@ Should go in an enlarged version of the last week report's single day, so it's l
     Choose Project
     (^^^ project choice rolls up on selection)
     
-      (List uninvoiced Tasks, group by Job, and display Job name)
-      Choose tasks
+      (List uninvoiced TimeEntries (showing associated Task) grouped by day, group by Job, and display Job name)
+      Choose TimeEntries
+
+      Note => Keep invoice sorted by Task date
+
+      Idea => Select multiple by Tasks by listening for mousedown, make all Task divs sensitive to hover/mouseover, and stop on mouseup
+      Later on, implement selection rectangles
+      Additionally, think about making Task divs draggable with the Invoice div a droppable target
 
 =============================================================================
-Future Tickets:
+Future/Sideline Tickets:
   - projects/index -> task dashboard: visually distinguish invoiced, invoiced and paid, and uninvoiced tasks
   
   - tasks/index -> list uninvoiced tasks, or have some intelligent way of presenting tasks chronologically,
@@ -54,5 +60,6 @@ Future Tickets:
   - Try out using has_finder: http://jamesgolick.com/2008/2/25/plugins-i-ve-known-and-loved-2-has_finder
   
   ✓ Try out ditz
+    Doesn’t really feel right to me at the moment. Maybe when there’s more in the pipe that this textfile doesn’t accommodate nicely.
   
-  - Switch to using finder_for plugin
+  ✓ Switch to using finder_for plugin

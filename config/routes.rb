@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :clients
 
-  map.resources :projects
+  map.resources :projects, :collection => {:temporary_invoice_list => :get}
   
   map.resources :tasks, :has_many => [ :time_entries ], :collection => { :import => :get, :process_import => :post }
 

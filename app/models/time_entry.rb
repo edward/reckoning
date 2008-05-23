@@ -1,6 +1,10 @@
 class TimeEntry < ActiveRecord::Base
   belongs_to :task
   
+  has_finder :for, lambda { |date|
+    {:conditions => ['start_time >= ? and start_time < ?', date, date + 1.day]}
+  }
+  
   alias_attribute(:start, :start_time)
   alias_attribute(:end, :end_time)
   alias_attribute(:stop, :end_time)

@@ -46,7 +46,7 @@ describe Project do
       tasks_proxy = mock("tasks proxy")
       @project.should_receive(:tasks).and_return(tasks_proxy)
       tasks_proxy.should_receive(:for).with(date).and_return(tasks_proxy)
-      tasks_proxy.should_receive(:sum)
+      tasks_proxy.should_receive(:inject).with(0)
       @project.total_time_for(date)
     end
   end

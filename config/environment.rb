@@ -58,3 +58,6 @@ Rails::Initializer.run do |config|
   # config.active_record.default_timezone = :utc
   
 end
+
+# Load the has_finder plugin manually (it doesn't conform to the normal plugin specs)
+require 'has_finder'

@@ -39,7 +39,7 @@ describe Task do
     it "should sum the time entries' total time" do
       te = mock_model(TimeEntry)
       @task.should_receive(:time_entries).and_return([te])
-      te.should_receive(:total_time).and_return 0
+      te.should_receive(:total_time).and_return(0)
       @task.total_time
     end
   end
@@ -49,17 +49,15 @@ describe Task do
       date = Date.today
       time_entries_mock = mock("time entries mock")
       time_entries_mock.should_receive(:for).with(date).and_return(time_entries_mock)
-      time_entries_mock.should_receive(:sum)
-      
+      time_entries_mock.should_receive(:inject).with(0)
       @task.should_receive(:time_entries).and_return(time_entries_mock)
-      
       @task.total_time_for(date)
     end
   end
   
   describe "#name_identifier" do
     it "should return the first task name identifier seen in the name" do
-      @task.should_receive(:name).and_return "#123"
+      @task.should_receive(:name).and_return("#123")
       @task.name_identifier.should == "#123"
     end
   end
