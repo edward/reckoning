@@ -1,0 +1,8 @@
+<div id="client-selection">
+  <h3>Which client are you invoicing?</h3>
+
+  <% @clients.each do |client| %>
+    <h4><%= link_to_remote client.name, :url => {:action => 'select_client', :id => client.id} %></h4>
+  <% end %>
+  <%= form.hidden_field :client_id, :id => 'client-id' %>
+</div>

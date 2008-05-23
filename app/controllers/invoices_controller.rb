@@ -17,4 +17,13 @@ class InvoicesController < ApplicationController
       redirect_to :new
     end
   end
+  
+  def select_client
+    @client = Client.find(params[:id])
+    @projects = @client.projects
+    
+    respond_to do |format|
+      format.js # select_client.rjs
+    end
+  end
 end

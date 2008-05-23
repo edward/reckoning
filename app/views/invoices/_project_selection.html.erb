@@ -1,0 +1,8 @@
+<div id="project-selection" style="display: none">
+  <h3>Which project are you invoicing?</h3>
+
+  <% @projects.each do |project| %>
+    <h4><%= link_to_remote project.name, select_project %></h4>
+  <% end %>
+  <input id="project-id" type="hidden" name="invoice[project_id]"/>
+</div>

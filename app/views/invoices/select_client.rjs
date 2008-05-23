@@ -1,0 +1,4 @@
+page.insert_html(:bottom, 'invoice-parameter-selection', :partial => 'project_selection')
+page << "$('client-selection').hide();
+         $('project-selection').show();
+         $('client-id').value = #{@client.id}"

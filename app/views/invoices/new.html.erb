@@ -6,13 +6,13 @@
   
   <p>Invoice number: <%= @invoice.id %></p>
   
-  <div class="span-12">
+  <div id='invoice-parameter-selection' class="span-12">
     <% form_for :invoice do |form| %>
       <%= render :partial => 'client_selection', :locals => {:form => form} %>
     <% end %>
   </div>
   
-  <div class="span-12 preview">
+  <div class="span-12 last preview">
     <h3>Invoice Preview</h3>
   </div>
 </div>
