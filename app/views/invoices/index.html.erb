@@ -1,0 +1,7 @@
+<!-- Full span is 24 columns -->
+<div class="span-24">
+  <%= link_to "Create invoice", new_invoice_url %>
+  <ul>
+    <%= render :partial => 'invoice', :collection => @invoices %>
+  </ul>
+</div>

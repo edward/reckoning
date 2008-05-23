@@ -1,0 +1,18 @@
+<!-- Full span is 24 columns -->
+<div class="span-24 invoice">
+  <h2>New Invoice</h2>
+  
+  <p>Today is <%= Date.today %></p>
+  
+  <p>Invoice number: <%= @invoice.id %></p>
+  
+  <div class="span-12">
+    <% form_for :invoice do |form| %>
+      <%= render :partial => 'client_selection', :locals => {:form => form} %>
+    <% end %>
+  </div>
+  
+  <div class="span-12 preview">
+    <h3>Invoice Preview</h3>
+  </div>
+</div>

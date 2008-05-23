@@ -20,9 +20,11 @@ ActiveRecord::Schema.define(:version => 6) do
 
   create_table "invoices", :force => true do |t|
     t.integer  "client_id"
+    t.string   "number"
     t.text     "notes"
     t.datetime "sent_at"
     t.datetime "paid_at"
+    t.date     "due_on"
     t.boolean  "invalidated"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -4,7 +4,8 @@ class InvoicesController < ApplicationController
   end
   
   def new
-    
+    @invoice = Invoice.new(:due_on => 2.weeks.from_now)
+    @clients = Client.find(:all)
   end
   
   def create

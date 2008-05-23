@@ -48,6 +48,12 @@ Should go in an enlarged version of the last week report's single day, so it's l
       Later on, implement selection rectangles
       Additionally, think about making Task divs draggable with the Invoice div a droppable target
 
+#7 invoice/settings => Invoice number formatting settings:
+
+  Formats should look like
+  [Day] [Month] [Year] [Next Overall Invoice Number] [Next Client Invoice Number] [Client Name]
+  Provide a text entry field that handles this stuff and offers a live-preview
+
 =============================================================================
 Future/Sideline Tickets:
   - projects/index -> task dashboard: visually distinguish invoiced, invoiced and paid, and uninvoiced tasks

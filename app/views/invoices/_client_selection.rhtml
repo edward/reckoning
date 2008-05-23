@@ -1,0 +1,8 @@
+<div id="client-selection">
+  <h3>Which client are you invoicing?</h3>
+
+  <% @clients.each do |client| %>
+    <h4><%= link_to_function client.name, "selectClient(this)" %></h4>
+  <% end %>
+  <%= form.hidden_field :client %>
+</div>
