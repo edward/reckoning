@@ -1,0 +1,11 @@
+<!-- Full span is 24 columns -->
+<div class="span-24">
+  
+  <%= error_messages_for 'client' %>
+  
+  <% form_for @client do |form| %>
+    Name: <%= form.text_field :name %><br />
+    Default rate (per hour): <%= form.text_field :default_rate %><br />
+    <%= submit_tag 'Add client' %>
+  <% end %>
+</div>

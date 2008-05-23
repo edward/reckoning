@@ -1,0 +1,7 @@
+<!-- Full span is 24 columns -->
+<div class="span-24">
+  <%= link_to "Create a new client entry", new_client_url %>
+  <ul>
+    <%= render :partial => 'client', :collection => @clients %>
+  </ul>
+</div>
