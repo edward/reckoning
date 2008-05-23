@@ -9,6 +9,7 @@ class Project < ActiveRecord::Base
   }
   
   validates_presence_of :name
+  validates_uniqueness_of :name
   
   # OPTIMIZE - could be done in SQL, but might not be as clear
   def total_time

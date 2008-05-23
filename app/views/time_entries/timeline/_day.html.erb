@@ -3,5 +3,5 @@
   <%= day.strftime("%A, %b. %d") %> |
   <strong class="small"><%= seconds_in_hours_and_minutes(day.total_time) %></strong>
   
-  <%= render :partial => 'project', :collection => day.projects, :locals => {:day => day} %>
+  <%= render :partial => 'time_entries/timeline/project', :collection => day.projects, :locals => {:day => day} %>
 </div>

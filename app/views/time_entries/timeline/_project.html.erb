@@ -1,0 +1,5 @@
+<div class="project span-4 last">
+  <span class="name large"><%= project.name %></span>
+  <strong><%= seconds_in_hours_and_minutes(project.total_time_for(day)) %></strong>
+  <%= render :partial => 'time_entries/timeline/task', :collection => project.tasks.for(day), :locals => {:day => day} %>
+</div>

@@ -1,0 +1,9 @@
+<!-- Full span is 24 columns -->
+<div class="span-24" style='overflow: auto; width: <%= (@days.size + 1) * 150 %>px;'>
+  <%= render :partial => 'time_entries/timeline/day', :collection => @days[0...-1], :locals => {:last => false} %>
+  <%= render :partial => 'time_entries/timeline/day', :object => @days[-1], :locals => {:last => true} %>
+</div>
+
+<div class="span-4 last">
+  Right sidebar
+</div>

@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   
   def import
   end
-    
+  
   def process_import
     @import_errors = []
     new_tasks = []

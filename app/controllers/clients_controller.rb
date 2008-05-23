@@ -11,7 +11,7 @@ class ClientsController < ApplicationController
     @client = Client.new(params[:client])
     
     if @client.save
-      redirect_to clients_url
+      redirect_to :action => 'index'
     else
       render :action => 'new'
     end

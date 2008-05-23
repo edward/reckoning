@@ -12,9 +12,9 @@ class InvoicesController < ApplicationController
     invoice = Invoice.new(params[:invoice])
     
     if invoice.save
-      redirect_to :index
+      redirect_to :action => 'index'
     else
-      redirect_to :new
+      render :action => 'new'
     end
   end
   

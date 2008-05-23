@@ -1,5 +1,1 @@
-<div class="project span-4 last">
-  <span class="name large"><%= project.name %></span>
-  <strong><%= seconds_in_hours_and_minutes(project.total_time_for(day)) %></strong>
-  <%= render :partial => 'tasks/task', :collection => project.tasks.for(day), :locals => {:day => day} %>
-</div>
+<li><%= link_to project.name, edit_project_url(project) %></li>
