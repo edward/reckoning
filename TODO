@@ -54,6 +54,10 @@ Should go in an enlarged version of the last week report's single day, so it's l
   [Day] [Month] [Year] [Next Overall Invoice Number] [Next Client Invoice Number] [Client Name]
   Provide a text entry field that handles this stuff and offers a live-preview
 
+#8 fix day dates and total hours on the y-axis:
+  Make the entire day div or the one outside it relative and the date/total fixed so
+  even when scrolling the page down, the dates remain at the top
+
 =============================================================================
 Future/Sideline Tickets:
   - projects/index -> task dashboard: visually distinguish invoiced, invoiced and paid, and uninvoiced tasks

@@ -1,6 +1,10 @@
 <div class='task last'>
   <span class='name'><%= link_to task.name, time_entries_url(:filter_class => Task.to_s, :id => task.id) %></span>
-  <span><strong><%= seconds_in_hours_and_minutes(task.total_time_for(day)) %></strong>&nbsp;|&nbsp;<%= seconds_in_hours_and_minutes(task.total_time) %></span>
+  <span>
+    <strong><%= seconds_in_hours_and_minutes(round_up_to_nearest_15_minutes(task.total_time_for(day))) %></strong>&nbsp;
+    <%= seconds_in_hours_and_minutes(task.total_time_for(day)) %>&nbsp;/&nbsp;
+    <%= seconds_in_hours_and_minutes(task.total_time) %>
+  </span>
   
   <%= render :partial => 'time_entries/timeline/time_entry', :collection => task.time_entries.for(day) %>
 </div>

@@ -1,6 +1,7 @@
 <div class="project span-4 last">
   <span class="name large"><%= project.name %></span>
   <strong>
+    <!-- TODO sum day’s rounded task totals -->
     <% if @filtered.is_a?(Task) && @filtered.total_time_for(day) > 0 -%>
       <%= seconds_in_hours_and_minutes(@filtered.total_time_for(day)) %>
     <% else -%>
