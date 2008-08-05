@@ -50,11 +50,9 @@ class TasksController < ApplicationController
         flash[:notice] = "#{pluralize(new_tasks.size, 'Task')} were imported for #{unique_projects.map(&:name).join(', ')}" #+ 
                          # unique_jobs.map {|job| "<a href='/jobs/#{job.id}'>#{job.name}</a>" }.split(", ")
         
-        format.html { redirect_to projects_url }
-        format.xml  { head :created, :location => projects_url }
+        format.html { redirect_to time_entries_url }
       else
         format.html { render :action => "import" }
-        format.xml  { render :xml => @import_errors.to_xml }
       end
     end
   end
