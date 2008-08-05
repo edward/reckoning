@@ -1,7 +1,18 @@
 <div class="day span-4 <%= "last" if last %>">
   <!-- Monday, Dec. 25 -->
   <%= day.strftime("%A, %b. %d") %> |
-  <strong class="small"><%= seconds_in_hours_and_minutes(day.total_time) %></strong>
   
-  <%= render :partial => 'time_entries/timeline/project', :collection => day.projects, :locals => {:day => day} %>
+  <strong class="small">
+    <% if @filtered.is_a?(Task) -%>
+      <%= seconds_in_hours_and_minutes(@filtered.total_time_for(day)) %>
+    <% else -%>
+      <%= seconds_in_hours_and_minutes(day.total_time) %>
+    <% end -%>
+  </strong>
+  
+  <% if @filtered.is_a?(Task) && @filtered.total_time_for(day) > 0 -%>
+    <%= render :partial => 'time_entries/timeline/project', :object => @filtered.project, :locals => {:day => day} %>
+  <% else -%>
+    <%= render :partial => 'time_entries/timeline/project', :collection => day.projects, :locals => {:day => day} %>
+  <% end -%>
 </div>
