@@ -63,7 +63,7 @@ Future/Sideline Tickets:
   - integration with quicksilver -> [quicksilver hotkey], [project name], tab [task name] (by default stop the current task and start this one)
     - This seems doable through a little client doing http requests
   
-  - Try out using has_finder: http://jamesgolick.com/2008/2/25/plugins-i-ve-known-and-loved-2-has_finder
+  ✓ Try out using has_finder: http://jamesgolick.com/2008/2/25/plugins-i-ve-known-and-loved-2-has_finder
   
   ✓ Try out ditz
     Doesn’t really feel right to me at the moment. Maybe when there’s more in the pipe that this textfile doesn’t accommodate nicely.
