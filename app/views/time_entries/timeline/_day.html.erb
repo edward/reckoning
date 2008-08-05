@@ -3,7 +3,7 @@
   <%= day.strftime("%A, %b. %d") %> |
   
   <strong class="small">
-    <% if @filtered.is_a?(Task) -%>
+    <% if @filtered.is_a?(Task) && @filtered.total_time_for(day) > 0 -%>
       <%= seconds_in_hours_and_minutes(@filtered.total_time_for(day)) %>
     <% else -%>
       <%= seconds_in_hours_and_minutes(day.total_time) %>

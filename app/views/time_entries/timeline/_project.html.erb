@@ -1,14 +1,14 @@
 <div class="project span-4 last">
   <span class="name large"><%= project.name %></span>
   <strong>
-    <% if @filtered.is_a?(Task) -%>
+    <% if @filtered.is_a?(Task) && @filtered.total_time_for(day) > 0 -%>
       <%= seconds_in_hours_and_minutes(@filtered.total_time_for(day)) %>
     <% else -%>
       <%= seconds_in_hours_and_minutes(project.total_time_for(day)) %>
     <% end -%>
   </strong>
   
-  <% if @filtered.is_a?(Task) -%>
+  <% if @filtered.is_a?(Task) && @filtered.total_time_for(day) > 0 -%>
     <%= render :partial => 'time_entries/timeline/task', :object => @filtered, :locals => {:day => day} %>
   <% else -%>
     <%= render :partial => 'time_entries/timeline/task', :collection => project.tasks.for(day), :locals => {:day => day} %>
